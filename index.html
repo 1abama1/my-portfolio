@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Портфолио</title>
+    <link rel="stylesheet" href="./src/styles/style.css" />
+    <link rel="icon" href="./src/images/logo.png" type="image/x-icon">
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__title">Шахмухамад Именов</h1>
+        <nav class="nav">
+            <a href="#about" class="nav__link">Обо мне</a>
+            <a href="#projects" class="nav__link">Проекты</a>
+            <a href="#contacts" class="nav__link">Контакты</a>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section id="about" class="about-section">
+            <div class="cols">
+              <div class="col-6">
+              <div class="about-item">
+                <h2 class="section-title">Обо мне</h2>
+                <p class="about-text">
+                    Здравствуйте. Меня зовут Именов Шахмухамад. <br> Я - студент колледжа "IT & BUSINESS COLLEGE". <br> Добро пожаловать в моё портфолио!
+                </p>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="about-item">
+                <img src="src/images/logo.png" alt="Моё фото">
+              </div>
+            </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="portfolio">
+          <div class="container">
+              <h2 class="section-title">Портфолио</h2>
+              <div class="portfolio-grid">
+                  <div class="portfolio-item">
+                      <div class="portfolio-image">
+                          <img src="./src/images/portfolio/1.png" alt="Игровой компьютер">
+                      </div>
+                      <div class="portfolio-content">
+                          <h3>УкУк</h3>
+                          <p>Мощная игровая система для современных AAA игр с максимальными настройками графики</p>
+                          <div class="portfolio-tags">
+                              <span class="tag">REACT</span>
+                              <span class="tag">NODE.JS</span>
+                              <span class="tag">PYTHON</span>
+                              <span class="tag">JS</span>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="portfolio-item">
+                      <div class="portfolio-image">
+                          <img src="./src/images/portfolio/2.png" alt="Рабочая станция">
+                      </div>
+                      <div class="portfolio-content">
+                          <h3>PC Builder KG</h3>
+                          <p>Профессиональная система для монтажа видео, 3D моделирования и графического дизайна</p>
+                          <div class="portfolio-tags">
+                              <span class="tag">HTML5</span>
+                              <span class="tag">CSS3</span>
+                              <span class="tag">JS</span>
+                              <span class="tag">PYTHON</span>
+                          </div>
+                      </div>
+                  </div>
+
+                  <div class="portfolio-item">
+                      <div class="portfolio-image">
+                          <img src="./src/images/portfolio/3.png" alt="Компактный ПК">
+                      </div>
+                      <div class="portfolio-content">
+                          <h3>ARKAN</h3>
+                          <p>Экономичная система для офисной работы, учебы и повседневных задач</p>
+                          <div class="portfolio-tags">
+                              <span class="tag">TypeScript</span>
+                              <span class="tag">React-Native</span>
+                              <span class="tag">Supabse</span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </section>
+
+        <section id="contacts" class="contacts-section">
+            <h2 class="section-title">Контакты</h2>
+            <p class="contact-info">Почта: <a href="mailto:shahimenov123@gmail.com" class="contact-link" style="color:#1db954;">shahimenov123@gmail.com</a></p>
+            <p class="contact-info">Telegram: <a href="https://t.me/imenovw" target="_blank" class="contact-link" style="color:#1db954;">@imenovw</a></p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        © 2025 Шахмухамад Именов - сделанно с любовью к себе
+    </footer>
+
+    <script src="src/scripts/script.js"></script>
+</body>
+</html>
