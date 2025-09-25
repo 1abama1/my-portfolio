@@ -79,6 +79,15 @@ section {
   color: #bbb;
 }
 
+.about-item .about-photo {
+  display: block;
+  max-width: 480Ыpx;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
 /* projects */
 .portfolio {
     background: var(--bg-secondary);
@@ -214,6 +223,40 @@ section {
   text-decoration: underline;
 }
 
+/* centered contacts */
+.contacts-section { display: flex; justify-content: center; }
+.contacts-inner { text-align: center; max-width: 900px; width: 100%; }
+.contact-sub { color: #aaa; margin-top: 8px; }
+.contacts-grid {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+.contact-card {
+  background: #1f1f1f;
+  color: #eee;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+.contact-card i { font-size: 22px; color: #1db954; }
+.contact-card-title { font-weight: 700; }
+.contact-card-sub { color: #bbb; font-size: 0.95rem; }
+.contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  border-color: rgba(29,185,84,0.35);
+}
+
 .tag {
     background: #1db954;
     color: white;
@@ -228,6 +271,10 @@ section {
     transform: translateY(-2px);
     box-shadow: var(--shadow-md);
 }
+
+
+.portfolio .container { text-align: center; }
+.portfolio .section-title { margin-left: auto; margin-right: auto; }
 
 /* footer */
 .footer {
@@ -247,3 +294,144 @@ section {
     margin: 0 8px;
   }
 }
+
+/* ===== Modal & Overlay (Telegram contact) ===== */
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 1000;
+}
+
+.contact-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.contact-modal-content {
+  width: 100%;
+  max-width: 520px;
+  background: #1f1f1f;
+  color: #eee;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transform: translateY(10px);
+  transition: transform 0.25s ease;
+}
+
+.contact-modal.active .contact-modal-content {
+  transform: translateY(0);
+}
+
+.contact-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.contact-modal-title {
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-modal-close {
+  background: transparent;
+  border: none;
+  color: #bbb;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.contact-modal-close:hover { color: #fff; }
+
+.contact-form { padding: 18px 20px 22px; }
+
+.form-group { margin-bottom: 14px; }
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  background: #151515;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  color: #eee;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #1db954;
+  box-shadow: 0 0 0 3px rgba(29, 185, 84, 0.15);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: #1db954;
+  color: #0b0b0b;
+}
+
+.btn-primary:hover { filter: brightness(1.05); }
+
+/* Prevent body scroll when modal is open */
+.modal-open { overflow: hidden; }
+
+/* ===== Inline notifications (fallback) ===== */
+.notification {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #1f1f1f;
+  color: #eee;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 1100;
+}
+
+.notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.notification-success { border-left: 4px solid #1db954; }
+.notification-warning { border-left: 4px solid #f59e0b; }
+.notification-info { border-left: 4px solid #3b82f6; }

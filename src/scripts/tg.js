@@ -1,7 +1,6 @@
-// Telegram Bot Integration for PC Builder KG
 class TelegramBot {
     constructor() {
-        this.botToken = '8120040906:AAEudK2QhsXgoFWRRCoUnMzXnPUVJWEhQ7k'; // Add your bot token here
+        this.botToken = '8130539225:AAGsPbXYzcbdiq6mtsO-lwqlvWZyOGC38NU'; // Add your bot token here
         this.chatId = '1019797376'; // Add your chat ID here
         this.webhookUrl = `https://api.telegram.org/bot${this.botToken}/sendMessage`;
         this.init();
@@ -15,7 +14,6 @@ class TelegramBot {
     }
 
     createModal() {
-        // Create modal if it doesn't exist
         if (!document.querySelector('.contact-modal')) {
             const modalHTML = `
                 <div class="contact-modal" id="contactModal">
@@ -45,27 +43,6 @@ class TelegramBot {
                             <div class="form-group">
                                 <label for="message">Сообщение</label>
                                 <textarea id="message" name="message" rows="4" placeholder="Расскажите о ваших требованиях..."></textarea>
-                            </div>
-                            <div class="form-group">
-                                <label for="budget">Бюджет (сом)</label>
-                                <select id="budget" name="budget">
-                                    <option value="">Выберите бюджет</option>
-                                    <option value="<50000">Менее 50,000 сом</option>
-                                    <option value="50000-100000">50,000 - 100,000 сом</option>
-                                    <option value="100000-200000">100,000 - 200,000 сом</option>
-                                    <option value="200000-300000">200,000 - 300,000 сом</option>
-                                    <option value="300000+">300,000+ сом</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="purpose">Цель использования</label>
-                                <select id="purpose" name="purpose">
-                                    <option value="">Выберите цель</option>
-                                    <option value="gaming">Игры</option>
-                                    <option value="work">Работа</option>
-                                    <option value="study">Учеба</option>
-                                    <option value="other">Другое</option>
-                                </select>
                             </div>
                             <button type="submit" class="btn btn-primary">
                                 <i class="fas fa-paper-plane"></i>
@@ -268,7 +245,7 @@ class TelegramBot {
         });
 
         return `
-🔔 <b>Новая заявка с сайта PC Builder KG</b>
+🔔 <b>Новая заявка с сайта Портфолио</b>
 
 👤 <b>Имя:</b> ${this.escapeHtml(data.name)}
 📞 <b>Телефон:</b> ${this.escapeHtml(data.phone)}

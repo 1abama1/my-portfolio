@@ -6,13 +6,14 @@
     <title>Портфолио</title>
     <link rel="stylesheet" href="./src/styles/style.css" />
     <link rel="icon" href="./src/images/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header class="header">
         <h1 class="header__title">Шахмухамад Именов</h1>
         <nav class="nav">
             <a href="#about" class="nav__link">Обо мне</a>
-            <a href="#projects" class="nav__link">Проекты</a>
+            <a href="#portfolio" class="nav__link">Портфолио</a>
             <a href="#contacts" class="nav__link">Контакты</a>
         </nav>
     </header>
@@ -30,7 +31,7 @@
             </div>
             <div class="col-6">
               <div class="about-item">
-                <img src="src/images/logo.png" alt="Моё фото">
+                <img class="about-photo" src="src/images/logo1.jpg" alt="Моё фото">
               </div>
             </div>
             </div>
@@ -42,7 +43,7 @@
               <div class="portfolio-grid">
                   <div class="portfolio-item">
                       <div class="portfolio-image">
-                          <img src="./src/images/portfolio/1.png" alt="Игровой компьютер">
+                          <img src="./src/images/portfolio/1.png" alt="УкУк">
                       </div>
                       <div class="portfolio-content">
                           <h3>УкУк</h3>
@@ -58,7 +59,7 @@
 
                   <div class="portfolio-item">
                       <div class="portfolio-image">
-                          <img src="./src/images/portfolio/2.png" alt="Рабочая станция">
+                          <img src="./src/images/portfolio/2.png" alt="PC Builder KG">
                       </div>
                       <div class="portfolio-content">
                           <h3>PC Builder KG</h3>
@@ -74,7 +75,7 @@
 
                   <div class="portfolio-item">
                       <div class="portfolio-image">
-                          <img src="./src/images/portfolio/3.png" alt="Компактный ПК">
+                          <img src="./src/images/portfolio/3.png" alt="ARKAN">
                       </div>
                       <div class="portfolio-content">
                           <h3>ARKAN</h3>
@@ -91,9 +92,26 @@
         </section>
 
         <section id="contacts" class="contacts-section">
-            <h2 class="section-title">Контакты</h2>
-            <p class="contact-info">Почта: <a href="mailto:shahimenov123@gmail.com" class="contact-link" style="color:#1db954;">shahimenov123@gmail.com</a></p>
-            <p class="contact-info">Telegram: <a href="https://t.me/imenovw" target="_blank" class="contact-link" style="color:#1db954;">@imenovw</a></p>
+            <div class="contacts-inner">
+                <h2 class="section-title">Контакты</h2>
+                <div class="contacts-grid">
+                    <a class="contact-card" href="mailto:shahimenov123@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                        <div class="contact-card-title">Email</div>
+                        <div class="contact-card-sub">shahimenov123@gmail.com</div>
+                    </a>
+                    <a class="contact-card" href="https://t.me/imenovw" target="_blank" rel="noopener">
+                        <i class="fab fa-telegram"></i>
+                        <div class="contact-card-title">Telegram</div>
+                        <div class="contact-card-sub">@imenovw</div>
+                    </a>
+                    <button class="contact-card" id="openContactModal" type="button">
+                        <i class="fas fa-paper-plane"></i>
+                        <div class="contact-card-title">Форма</div>
+                        <div class="contact-card-sub">Написать мне</div>
+                    </button>
+                </div>
+            </div>
         </section>
     </main>
 
@@ -102,5 +120,6 @@
     </footer>
 
     <script src="src/scripts/script.js"></script>
+    <script src="src/scripts/tg.js"></script>
 </body>
 </html>
